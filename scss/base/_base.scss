@@ -1,6 +1,10 @@
-h1 {
-    font-size: 32px;
-}
+@use './vars.scss' as *;
+
 body {
-    background-color: antiquewhite;
+    background-color: $color-background;
+}
+
+.container {
+    max-width: 1440px;
+    padding: 0 113px;
 }
