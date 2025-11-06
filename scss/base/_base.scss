@@ -1,10 +1,22 @@
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('../../fonts/Inconsolata-VariableFont_wdth,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-stretch: 75% 125%;
+    font-style: normal;
+    font-display: swap;
+}
+
 @use './vars.scss' as *;
 
 body {
     background-color: $color-background;
+    font-family: 'Inconsolata' ;
 }
 
 .container {
     max-width: 1440px;
     padding: 0 113px;
 }
+
+

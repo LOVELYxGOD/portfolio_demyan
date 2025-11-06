@@ -1,5 +1,6 @@
 @use '../base/vars' as *;
 
+
 .header {
 }
 .header__content {
@@ -15,6 +16,8 @@
     gap: $gap-medium;
 }
 .menu__item {
+    font-family: 'Inconsolata', monospace;
+    font-weight: 800; 
     list-style: none;
 }
 .anchor-link {
