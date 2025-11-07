@@ -1,0 +1,8 @@
+@mixin hover_text($color_text){
+    @media (hover: hover) {
+        &:hover {
+            color: $color_text;
+            text-shadow: 0 0 3px $color_text;
+        }
+    }
+}

@@ -1,5 +1,5 @@
 @use '../base/vars' as *;
-
+@use '../base/mixins' as *;
 
 .header {
 }
@@ -10,16 +10,21 @@
 .logo {
 }
 .menu {
-}
-.menu__list {
-    display: flex;
-    gap: $gap-medium;
-}
-.menu__item {
-    font-family: 'Inconsolata', monospace;
-    font-weight: 800; 
-    list-style: none;
+    &__list {
+        display: flex;
+        gap: $gap-medium;
+    }
+    &__item {
+        font-family: 'Inconsolata', monospace;
+        list-style: none;
+    }
 }
 .anchor-link {
     text-decoration: none;
+    color: $color-secondary;
+    font-size: 20px;
+    font-weight: 700; 
+    text-transform: capitalize;
+    transition: color .3s, text-shadow .3s;
+    @include hover_text($color-primary)
 }
