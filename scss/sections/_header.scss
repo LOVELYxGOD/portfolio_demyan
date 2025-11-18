@@ -22,6 +22,8 @@
         list-style: none;
     }
 }
+
+
 .anchor-link {
     text-decoration: none;
     color: $color-secondary;
@@ -67,9 +69,13 @@
     }
 
     .menu__list {
-        flex-direction: column;
-        justify-content: center;
+        display: flex;
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center;    
+        height: 100vh; 
     }
+
     .burger {
         display: block;
         z-index: 10;
