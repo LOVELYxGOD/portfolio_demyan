@@ -14,6 +14,7 @@
         width: 36px;
         height: 4px;
         background-color: $color-secondary;
+        transition: background-color .3s 0s;
 
         &:before, &::after {
             position: absolute;
@@ -26,10 +27,12 @@
         
         &:before {
             top: -10px;
+            transition: top .3s .3s, transform .3s;
         }
 
         &:after {
             bottom: -10px;
+            transition: bottom .3s .3s, transform .3s;
         }
 
     }
@@ -39,5 +42,23 @@
         justify-content: center; 
         align-items: center;   
         z-index: 10;
+    }
+}
+
+.burger.active {
+    .burger__center-line {
+        background-color: transparent;
+        
+        &:before {
+            top: 0;
+            transform: rotate(45deg);
+            transition: top .3s, transform .3s .3s;
+        }
+
+        &:after {
+            bottom: 0;
+            transform: rotate(-45deg);
+            transition: bottom .3s, transform .3s .3s;
+        }
     }
 }
