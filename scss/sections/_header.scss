@@ -34,10 +34,6 @@
     @include hover_text($color-primary)
 }
 
-.burger {
-    display: none;
-}
-
 @media (max-width: 1024px) {
     .header__content {
         flex-direction: column;
@@ -76,8 +72,4 @@
         height: 100vh; 
     }
 
-    .burger {
-        display: block;
-        z-index: 10;
-    }
 }
