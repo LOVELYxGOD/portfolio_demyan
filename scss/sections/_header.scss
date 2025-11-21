@@ -60,8 +60,15 @@
         width: 100vw;
         background-color: $color-background;
         position: fixed;
-        top: 0;
+        top: -100vh;
         left: 0;
+        transition: .5s;
+        opacity: 0;
+
+        &.active {
+            top: 0;
+            opacity: 1;
+        }
     }
 
     .menu__list {
@@ -71,5 +78,6 @@
         align-items: center;    
         height: 100vh; 
     }
+
 
 }
