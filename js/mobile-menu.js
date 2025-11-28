@@ -4,13 +4,17 @@ const menu = header.querySelector('#menu');
 
 function setStyleMobileMenu(event) {
     const isBurger = event.target.closest('#burger') ;
-    isBurger.classList.toggle('active')
-    menu.classList.toggle('active')
-    // домашку выполнить ЗДЕСЬ
+    const isAnchorLink = event.target.closest('[data-anchor]');
+    
+    if (isBurger) {
+        isBurger.classList.toggle('active');
+        menu.classList.toggle('active');
+    }
+    
+    if (isAnchorLink) {
+        burger.classList.remove('active');
+        menu.classList.remove('active');
+    }
 }
 
 header.addEventListener('click',(event)=> setStyleMobileMenu(event)) 
-
-// 1. Найти и прочитать инфорамацию о дата-атрибутах(js-учебник)
-// 2. В html всем якорным сылкам дать дата-атрибут(без значения)
-// 3. При клике проверять что элемент содержит дата атрибут(сылка)-закрыть меню
