@@ -1,10 +1,12 @@
-@import './base/normalize' ;
+@use './base/normalize' ;
 
 // base
-@import './base/base' ;
+@use './base/base' ;
 
 // section
-@import './sections/header' ;
+@use './sections/header' ;
+
 
 // block
-@import './blocks/burger' ;
+@use './blocks/burger' ;
+

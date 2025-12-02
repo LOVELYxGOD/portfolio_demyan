@@ -4,8 +4,11 @@ const menu = header.querySelector('#menu');
 
 function setStyleMobileMenu(event) {
     const isBurger = event.target.closest('#burger') ;
+    const isAnchorLink = event.target.closest('[data-anchor]');
     isBurger.classList.toggle('active')
     menu.classList.toggle('active')
+    burger.classList.remove('active');
+    menu.classList.remove('active');
     // домашку выполнить ЗДЕСЬ
 }
 
