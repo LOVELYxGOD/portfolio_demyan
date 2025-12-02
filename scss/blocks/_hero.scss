@@ -1,0 +1,28 @@
+@use '../base/vars' as *;
+
+.hero {
+    max-width: 480px;
+    &__main-title {
+        font-family: $font-primary;
+        font-size: 64px;
+        font-weight: 900;
+        color: $color-primary;
+        margin-bottom: 14px;
+    }
+
+    &__sub-title {
+        font-family: $font-primary;
+        font-size: 40px;
+        font-weight: 700;
+        color: $color-secondary;
+        margin-bottom: 14px;
+        text-transform: capitalize;
+    }
+
+    &__discribe {
+        font-family: $font-primary;
+        font-size: 20px;
+        font-weight: 400;
+        color: $color-secondary;
+    }
+}
