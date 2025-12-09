@@ -6,9 +6,12 @@
 // section
 @use './sections/header' ;
 
+@use './sections/about-me' ;
+
 // block
 @use './blocks/burger' ;
 
 @use './blocks/hero' ;
 
 @use './blocks/avatar' ;
+

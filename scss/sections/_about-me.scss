@@ -1,0 +1,55 @@
+@use '../base/vars' as *;
+@use '../base/mixins' as *;
+
+.about-me {
+}
+.about-me_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    padding-bottom: 64px;
+    padding-top: 64px;
+}
+.context-picture {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    flex-shrink: 0;
+}
+.context-picture__item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 72px; 
+    height: 72px; 
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    object-fit: cover;
+}
+
+.context-picture__item--top {
+    background-color: $color-primary;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    opacity: 0.4;
+
+}
+
+.context-picture__item--bottom {
+    background-color: $color-secondary;
+    transform: translate(-50%, -50%) rotate(30deg);
+}
+
+.about-me__text {
+    max-width: 904px;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+@media (max-width: 650px) {
+    .about-me_content {
+        flex-direction: column;
+    }
+    .about-me__text {
+        font-weight: 450;
+    }
+}
