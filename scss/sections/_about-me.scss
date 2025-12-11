@@ -29,17 +29,13 @@
 
 .context-picture__item--top {
     background-color: $color-primary;
-    transform: translate(-50%, -50%) rotate(-30deg);
     opacity: 0.5;
-    // animation: rotateCircle 4s ease-out infinite;
-    @include rotate(4s, ease-out, infinite)
+    @include rotate(4s, ease-out, infinite, -60deg)
 }
 
 .context-picture__item--bottom {
     background-color: $color-secondary;
-    transform: translate(-50%, -50%) rotate(30deg);
-    // animation: rotateCircle 4s ease-in infinite;
-    @include rotate(4s, ease-in, infinite)
+    @include rotate(4s, ease-in, infinite, 120deg)
 }
 
 .about-me__text {

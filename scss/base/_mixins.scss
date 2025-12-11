@@ -9,8 +9,16 @@
     }
 }
 
-@mixin rotate($duration, $cubick, $repeat) {
+@mixin rotate($duration, $cubick, $repeat, $startPosition) {
     & {
+        @keyframes rotateCircle {
+            from {
+                transform: translate(-50%, -50%) rotate($startPosition);
+            }
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
         animation: rotateCircle $duration $cubick $repeat;
     }
 }
