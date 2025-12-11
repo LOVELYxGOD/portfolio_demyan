@@ -1,8 +1,16 @@
+@use '../base/animations' as *;
+
 @mixin hover_text($color_text){
     @media (hover: hover) {
         &:hover {
             color: $color_text;
             text-shadow: 0 0 3px $color_text;
         }
+    }
+}
+
+@mixin rotate($duration, $cubick, $repeat) {
+    & {
+        animation: rotateCircle $duration $cubick $repeat;
     }
 }

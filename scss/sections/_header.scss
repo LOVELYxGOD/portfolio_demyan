@@ -32,7 +32,7 @@
     font-size: 20px;
     font-weight: 700; 
     text-transform: capitalize;
-    transition: color .3s, text-shadow .3s;
+    transition: color 3s ease-in, text-shadow 3s ease-in;
     @include hover_text($color-primary)
 }
 
