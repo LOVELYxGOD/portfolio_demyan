@@ -28,14 +28,19 @@
 }
 
 .context-picture__item--top {
-    background-color: $color-primary;
-    opacity: 0.5;
-    @include rotate(4s, ease-out, infinite)
+        background: #b702ffc5;
+        z-index: 1;
+        backdrop-filter: blur(8px);
+        filter: blur(8px);
+        @include rotate(8s, ease-out, infinite) 
 }
 
 .context-picture__item--bottom {
-    background-color: $color-secondary;
-    @include rotate(4s, ease-in, infinite)
+        background: #f0e3ca85;
+        z-index: 2;
+        backdrop-filter: blur(8px);
+        filter: blur(8px);
+        @include rotate(9s, ease-in, infinite) 
 }
 
 .about-me__text {

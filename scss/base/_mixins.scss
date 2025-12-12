@@ -10,15 +10,15 @@
 }
 
 @mixin rotate($duration, $cubick, $repeat) {
-    & {
-        @keyframes rotateCircle {
-            from {
-                transform: translate(-50%, -50%) rotate(0deg);
-            }
-            to {
-                transform: translate(-50%, -50%) rotate(360deg);
-            }
+    @keyframes rotateCircle {
+        from {
+            transform: translate(-50%, -50%) rotate(0deg);
         }
+        to {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+    }
+    & {
         animation: rotateCircle $duration $cubick $repeat;
     }
 }

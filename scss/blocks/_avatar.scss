@@ -1,4 +1,5 @@
 @use '../base/vars' as *; // Импорт переменных из файла vars.scss
+@use '../base/mixins' as *;
 
 .avatar {
     background-image: url('../img/avatar-bg.png');
@@ -21,16 +22,19 @@
     }
 
     &__item--down {
-        background: $color-secondary;
+        background: #f0e3cad0;
         z-index: 1;
-        transform: translate(-50%, -50%) rotate(20deg);
+        backdrop-filter: blur(20px);
+        filter: blur(20px);
+        @include rotate(9s, ease-in, infinite) 
     }
 
     &__item--middle {
-        background: $color-primary;
-        opacity: .4;
+        background: #b702ffc5;
         z-index: 2;
-        transform: translate(-50%, -50%) rotate(30deg);
+        backdrop-filter: blur(20px);
+        filter: blur(20px);
+        @include rotate(8s, ease-out, infinite) 
     }
     &__item--top {
         z-index: 3;
