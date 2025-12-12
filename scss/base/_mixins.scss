@@ -9,11 +9,11 @@
     }
 }
 
-@mixin rotate($duration, $cubick, $repeat, $startPosition) {
+@mixin rotate($duration, $cubick, $repeat) {
     & {
         @keyframes rotateCircle {
             from {
-                transform: translate(-50%, -50%) rotate($startPosition);
+                transform: translate(-50%, -50%) rotate(0deg);
             }
             to {
                 transform: translate(-50%, -50%) rotate(360deg);
