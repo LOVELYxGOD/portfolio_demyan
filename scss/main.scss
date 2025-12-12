@@ -8,6 +8,8 @@
 
 @use './sections/about-me' ;
 
+@use './sections/_welcomeContent.scss';
+
 // block
 @use './blocks/burger' ;
 

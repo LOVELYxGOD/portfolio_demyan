@@ -1,0 +1,9 @@
+@use '../base/vars' as *; // Импорт переменных из файла vars.scss
+
+.welcome__content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 73px 0;
+}
