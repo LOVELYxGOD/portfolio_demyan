@@ -26,4 +26,19 @@
         font-weight: 400;
         color: $color-secondary;
     }
+
+    @media (max-width: 600px) {
+        &__main-title {
+            font-size: 40px;
+            font-weight: 900;
+        }
+        &__sub-title {
+            font-size: 32;
+            font-weight: 700;
+        }
+        &__discribe {
+            font-size: 24;
+            font-weight: 400;
+        }
+    }
 }

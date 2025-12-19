@@ -6,4 +6,18 @@
     align-items: center;
     justify-content: space-between;
     padding: 73px 0;
+
+    @media (max-width: 1250px) {
+        flex-direction: column;
+        gap: 64px;
+        padding: 128px 0;
+    }
+
+    @media (max-width: 768px) {
+        padding: 142px 0;
+    }
+
+    @media (max-width: 600px) {
+        gap: 80px;
+    }
 }
