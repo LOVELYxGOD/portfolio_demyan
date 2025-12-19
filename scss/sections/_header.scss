@@ -7,6 +7,10 @@
     left: 0;
     width: 100%;
     z-index: 10;
+    background-color: #00000000;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 5px 5px #0000008f;
+    
 }
 
 .header__content {
