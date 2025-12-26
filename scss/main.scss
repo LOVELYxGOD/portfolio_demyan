@@ -10,6 +10,8 @@
 
 @use './sections/_welcomeContent.scss';
 
+@use './sections/skills';
+
 // block
 @use './blocks/burger' ;
 
@@ -17,3 +19,4 @@
 
 @use './blocks/avatar' ;
 
+@use './base/_title.scss';

@@ -1,0 +1,49 @@
+@use '../base/_vars.scss' as *;
+
+.skills {
+}
+.skills__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 64px 0;
+}
+.common-title {
+}
+.list-skill-cards {
+    display: flex;
+    gap: 16px;
+    list-style: none;
+    &__item {
+    }
+}
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    border-radius: 10px;
+    background-color: $color-grey-100;
+    max-width: 200px;
+    width: 100%;
+    padding: 60px 40px;
+
+    &__wrapper-pic {
+        width: 128px;
+        height: 128px;
+    }
+    &__wrapper-pic--smaller {
+        width: 114px;
+    }
+    .skill-icon {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    &__title {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 32px;
+        font-weight: 400;
+    }
+}
