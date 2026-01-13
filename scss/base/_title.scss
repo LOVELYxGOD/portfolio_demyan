@@ -1,0 +1,7 @@
+@use './vars' as *;
+
+.common-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: $color-primary;
+}
