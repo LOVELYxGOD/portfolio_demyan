@@ -105,3 +105,11 @@
     }
 }
 
+.skill-card.active {
+    .skill-card__back {
+        transform: rotateX(0deg);
+    }
+    .skill-card__front {
+        transform: rotateX(180deg);        
+    }
+}
