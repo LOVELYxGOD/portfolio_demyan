@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="./favicon/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="./css/main.css">
     <script src="./js/mobile-menu.js" defer="defer"></script>
+    <script src="./js/skills_card.js" defer="defer"></script>
 </head>
 <body>
     <header class="header" id="header">
@@ -87,10 +88,11 @@
             <div class="container">
                 <div class="skills__content">
                     <h6 class="common-title">My Skills</h6>
-                    <ul class="list-skill-cards">
+                    <ul class="list-skill-cards" id="list-skill-card">
 
                         <li class="list-skill-cards__item">
-                            <article class="skill-card">
+                            <article class="skill-card" data-skill-card>
+                                
                                 <div class="skill-card__front">
                                     <svg class="skill-card__icon skill-card__icon--html">
                                         <use href="./img/sprite.svg#HtmlIcon"></use>
@@ -102,7 +104,7 @@
                         </li>
 
                         <li class="list-skill-cards__item">
-                            <article class="skill-card">
+                            <article class="skill-card" data-skill-card>
                                 <div class="skill-card__front">
                                     <div class="skill-card__wrapper-pic">
                                         <svg class="skill-card__icon skill-card__icon--scss">
@@ -116,7 +118,7 @@
                         </li>
                         
                         <li class="list-skill-cards__item">
-                            <article class="skill-card">
+                            <article class="skill-card" data-skill-card>
                                 <div class="skill-card__front">
                                     <div class="skill-card__wrapper-pic">
                                         <svg class="skill-card__icon skill-card__icon--js">
@@ -130,7 +132,7 @@
                         </li>
                         
                         <li class="list-skill-cards__item">
-                            <article class="skill-card">
+                            <article class="skill-card" data-skill-card>
                                 <div class="skill-card__front">
                                     <div class="skill-card__wrapper-pic skill-card__wrapper-pic--smaller">
                                         <svg class="skill-card__icon skill-card__icon--css">
@@ -144,7 +146,7 @@
                         </li>
 
                         <li class="list-skill-cards__item">
-                            <article class="skill-card">
+                            <article class="skill-card" data-skill-card>
                                 <div class="skill-card__front">
                                     <div class="skill-card__wrapper-pic skill-card__wrapper-pic--smaller">
                                         <svg class="skill-card__icon skill-card__icon--git">
