@@ -10,14 +10,12 @@ function toggleSkillCard(event) {
         fade.classList.add('open')
         isSkillCard.classList.add('active');
         body.classList.add('no-scroll');
-        console.log('карточка');
         
     }
     if (isClose) {
         isClose.closest('[data-skill-card]').classList.remove('active')
         isClose.classList.remove('no-scroll')
         body.classList.remove('no-scroll');
-        console.log(isClose);
         fade.classList.remove('open')
     }
 }

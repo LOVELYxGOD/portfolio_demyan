@@ -21,10 +21,14 @@
         
     }
 }
-.skill-card {
-    position: relative;
+.list-skill-cards__item {
     width: 200px;
     height: 300px;
+}
+.skill-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
 
     cursor: pointer;
     &__back, &__front {
@@ -34,15 +38,17 @@
         backface-visibility: hidden;
         width: 100%;
         height: 100%;
+        transition: .7s;
 
     }
     &__back {
-        transform: rotateX(180deg);
+        transform: rotateY(180deg);
         
     }
 
     &__front {
         display: flex;
+        transform: rotateY(0deg);
         flex-direction: column;
         align-items: center;
         gap: 16px;
@@ -106,14 +112,27 @@
 }
 
 .skill-card.active {
+    position: fixed;
+    transition: top .4s, left .4s, transform .4s;
     z-index: 11;
-
-    .skill-card__back {
-        transform: rotateX(0deg);
-    }
-    .skill-card__front {
-        transform: rotateX(180deg);        
-    }
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 30%;
+    max-height: 300px;
+    // max-width: 100%;
+    
+    
+    // .skill-card__back {
+    //     box-shadow: 0 0 8px #1f1e1b;
+    //     border-radius: 8px;
+    //     background: #1f1e1b80;
+    //     transform: rotateY(0deg);
+    //     backdrop-filter: blur(5px);
+    // }
+    // .skill-card__front {
+    //     transform: rotateY(180deg);        
+    // }
 }
 .skill-card__close {
     position: absolute;
@@ -143,9 +162,4 @@
 
 .no-scroll {
     overflow: hidden ;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
 }
