@@ -26,6 +26,7 @@
     height: 300px;
 }
 .skill-card {
+    transition: .4s;
     position: relative;
     width: 100%;
     height: 100%;
@@ -42,6 +43,7 @@
 
     }
     &__back {
+        
         transform: rotateY(180deg);
         
     }
@@ -80,6 +82,19 @@
         font-weight: 400;
     }
 
+    &__discription {
+        font-family: "Roboto Condensed", sans-serif;
+        position: absolute;
+        opacity: 0;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        width: 90%;
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+
 }
 .skill-card:hover {
     .skill-card__icon {
@@ -113,34 +128,47 @@
 
 .skill-card.active {
     position: fixed;
-    transition: top .4s, left .4s, transform .4s;
+    transition: top .4s, left .4s;
     z-index: 11;
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
     width: 30%;
     max-height: 300px;
-    // max-width: 100%;
+    // ПОФИКСИТЬ ПЛАВНОСТЬ АНИМАЦИИ(НЕЙРОНКА)
+    .skill-card__discription {
+        transition: opacity .4s .8s;
+        opacity: 1;
+    }
     
     
-    // .skill-card__back {
-    //     box-shadow: 0 0 8px #1f1e1b;
-    //     border-radius: 8px;
-    //     background: #1f1e1b80;
-    //     transform: rotateY(0deg);
-    //     backdrop-filter: blur(5px);
-    // }
-    // .skill-card__front {
-    //     transform: rotateY(180deg);        
-    // }
+    .skill-card__back {
+        transition:  transform .4s .4s;
+        box-shadow: 0 0 8px #1f1e1b;
+        border-radius: 8px;
+        background: #1f1e1b80;
+        transform: rotateY(0deg);
+        backdrop-filter: blur(5px);
+    }
+    .skill-card__front {
+        transition:  transform .4s .4s;
+        transform: rotateY(180deg);        
+    }
 }
 .skill-card__close {
+    background-color: transparent;
+    background-image: url('../../img/crestick.svg');
+    border: none;
+    
+    background-size: cover;
+    background-repeat: no-repeat;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 15px;
+    right: 15px;
     z-index: 2;
     width: 40px;
     height: 40px;
+
 }
 
 .fade {
@@ -163,3 +191,4 @@
 .no-scroll {
     overflow: hidden ;
 }
+
