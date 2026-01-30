@@ -17,6 +17,8 @@
     display: flex;
     gap: 16px;
     list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
     &__item {
         
     }
@@ -142,6 +144,7 @@
     }
     
     
+    
     .skill-card__back {
         transition:  transform .4s .4s;
         box-shadow: 0 0 8px #1f1e1b;
@@ -156,10 +159,10 @@
     }
 }
 .skill-card__close {
+    transition: transform .3s;
     background-color: transparent;
     background-image: url('../img/crestick.svg');
     border: none;
-    
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
@@ -169,6 +172,9 @@
     width: 40px;
     height: 40px;
 
+    &:hover {
+        transform: rotate(45deg);
+    }
 }
 
 .fade {
@@ -192,3 +198,25 @@
     overflow: hidden ;
 }
 
+@media(max-width:500px) {
+    .skill-card__front {
+        flex-direction: row;
+        padding: 14px 36px;
+    }
+    .list-skill-cards__item {
+        max-width: 300px;
+        max-height: 60px;
+        width: 100%;
+    }
+
+    .skill-card__wrapper-pic {
+        width: 32px;
+        height: 32px;
+    }
+
+    .list-skill-cards {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+}
