@@ -135,7 +135,8 @@
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    width: 30%;
+    width: 100%;
+    max-width: 650px;
     max-height: 300px;
     // ПОФИКСИТЬ ПЛАВНОСТЬ АНИМАЦИИ(НЕЙРОНКА)
     .skill-card__discription {
@@ -196,6 +197,11 @@
 
 .no-scroll {
     overflow: hidden ;
+}
+@media(max-width:700px) {
+.skill-card.active {
+    width: 90%;
+}
 }
 
 @media(max-width:500px) {
