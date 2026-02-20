@@ -18,6 +18,16 @@ class Slider {
         this.sliderElement.append(wraperHiden)
         wraperHiden.append(truck)
         truck.innerHTML = contentSlider
+
+        const leftArrow = this.createArrows('left')
+        const rightArrow = this.createArrows('right')
+        this.sliderElement.append(leftArrow,rightArrow)
+    }
+
+    createArrows(className){
+        const arrow = document.createElement('button')
+        arrow.className = className
+        return arrow
     }
 }
 
