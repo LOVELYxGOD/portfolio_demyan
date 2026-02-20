@@ -22,6 +22,10 @@ class Slider {
         const leftArrow = this.createArrows('left')
         const rightArrow = this.createArrows('right')
         this.sliderElement.append(leftArrow,rightArrow)
+
+        const slidesCounter = this.sliderElement.querySelectorAll('.slider__slide').length
+        console.log(slidesCounter);
+        
     }
 
     createArrows(className){
@@ -29,6 +33,8 @@ class Slider {
         arrow.className = className
         return arrow
     }
+
+
 }
 
 const mySlider = new Slider()
