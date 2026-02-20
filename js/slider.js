@@ -10,15 +10,19 @@ class Slider {
     }
 
     builder(){
+        const contentSlider = this.sliderElement.innerHTML
         const wraperHiden = document.createElement('div')
-        const lenght = document.createElement('div')
+        const truck = document.createElement('div')
+        
+        this.sliderElement.innerHTML = ''
         this.sliderElement.append(wraperHiden)
-        wraperHiden.append(lenght)
+        wraperHiden.append(truck)
+        truck.innerHTML = contentSlider
     }
 }
 
 const mySlider = new Slider()
 mySlider.getElement('#slider')
-console.log(mySlider);
+console.log(mySlider)
 mySlider.builder()
 
