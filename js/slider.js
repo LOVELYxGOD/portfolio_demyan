@@ -13,14 +13,17 @@ class Slider {
         const contentsSlider = this.sliderElement.innerHTML
         const wrapperHiden = document.createElement('div')
         const truck = document.createElement('div')
+        truck.className = 'truck'
 
         this.sliderElement.innerHTML = ''
         this.sliderElement.append(wrapperHiden)
         wrapperHiden.append(truck)
+        wrapperHiden.className = 'wrapperHiden'
         truck.innerHTML = contentsSlider
 
-        const leftArrow = this.createArrows('left')
-        const rightArrow = this.createArrows('right')
+        const leftArrow = this.createArrows('arrow left')
+        const rightArrow = this.createArrows('arrow right')
+
         this.sliderElement.append(leftArrow, rightArrow)
 
         const slidesCounter = this.sliderElement.querySelectorAll('.slider__slide').length

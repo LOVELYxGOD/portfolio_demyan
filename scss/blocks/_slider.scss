@@ -1,0 +1,37 @@
+.slider {
+    
+    background: #6d016d;
+
+}
+.truck {
+    display: flex;
+    
+}
+
+.slider__slide {
+    flex-shrink: 0;
+    width: 100%;
+    background: #b6ff42;
+}
+
+
+.wrapperHiden {
+    overflow: hidden;
+
+}
+
+
+.arrow {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background: #39b4fc;
+
+}
+.left {
+
+}
+
+.right {
+
+}
