@@ -1,44 +1,53 @@
 class Slider {
-    contructor() {
+    constructor() {
         this.sliderElement = null
     }
 
     getElement(selector) {
-        if(selector)  {
+        if(selector) {
             this.sliderElement = document.querySelector(selector)
         }
     }
 
-    builder(){
-        const contentSlider = this.sliderElement.innerHTML
-        const wraperHiden = document.createElement('div')
+    builder() {
+        const contentsSlider = this.sliderElement.innerHTML
+        const wrapperHiden = document.createElement('div')
         const truck = document.createElement('div')
-        
+
         this.sliderElement.innerHTML = ''
-        this.sliderElement.append(wraperHiden)
-        wraperHiden.append(truck)
-        truck.innerHTML = contentSlider
+        this.sliderElement.append(wrapperHiden)
+        wrapperHiden.append(truck)
+        truck.innerHTML = contentsSlider
 
         const leftArrow = this.createArrows('left')
         const rightArrow = this.createArrows('right')
-        this.sliderElement.append(leftArrow,rightArrow)
+        this.sliderElement.append(leftArrow, rightArrow)
 
         const slidesCounter = this.sliderElement.querySelectorAll('.slider__slide').length
-        console.log(slidesCounter);
-        
+        const pagination = this.createPagination(slidesCounter)
+        this.sliderElement.append(pagination)
     }
 
-    createArrows(className){
+    createArrows(classname) {
         const arrow = document.createElement('button')
-        arrow.className = className
+        arrow.className = classname
         return arrow
     }
 
+    createPagination(counter) {
+        const pagination = document.createElement('div')
+        pagination.className = 'pagination'
+        for (let index = 0; index < counter; index++) {
+            const button = document.createElement('button')
+            pagination.append(button)
+        }
+        return pagination
+    }
 
 }
 
 const mySlider = new Slider()
 mySlider.getElement('#slider')
-console.log(mySlider)
 mySlider.builder()
+
 
