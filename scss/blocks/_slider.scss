@@ -1,0 +1,53 @@
+.slider {
+    background: #ff2701;
+    position: relative; 
+}
+
+.truck {
+    display: flex;
+    
+}
+
+.slider__slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 300px; // УБРААААТЬ
+    background: #b6ff42;
+}
+
+
+.wrapperHiden {
+    overflow: hidden;
+}
+
+
+.arrow {
+    position: absolute;
+    width: 40px; 
+    height: 40px;
+    background: #39b4fc;
+    border: none;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+}
+.left {
+    left: -50px;
+}
+
+.right {
+    right: -50px;
+}
+
+.pagination {
+    position: absolute; 
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -30px;
+    display: flex;
+    flex-direction: row; 
+    gap: 10px; 
+    
+
+}
