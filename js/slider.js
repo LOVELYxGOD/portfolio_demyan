@@ -1,7 +1,10 @@
 class Slider {
     constructor() {
         this.sliderElement = null
+        this.truck = null
         this.slideWidth = 0
+        this.counter = 0
+        this.gap = 10 
     }
 
     getElement(selector) {
@@ -13,14 +16,15 @@ class Slider {
     builder() {
         const contentsSlider = this.sliderElement.innerHTML
         const wrapperHiden = document.createElement('div')
-        const truck = document.createElement('div')
-        truck.className = 'truck'
+        this.truck = document.createElement('div')
+        this.truck.className = 'truck'
+        this.truck.style.gap = `${this.gap}px`
 
         this.sliderElement.innerHTML = ''
         this.sliderElement.append(wrapperHiden)
-        wrapperHiden.append(truck)
+        wrapperHiden.append(this.truck)
         wrapperHiden.className = 'wrapperHiden'
-        truck.innerHTML = contentsSlider
+        this.truck.innerHTML = contentsSlider
 
         const leftArrow = this.createArrows('arrow left', 'left')
         const rightArrow = this.createArrows('arrow right', 'right')
@@ -31,7 +35,6 @@ class Slider {
         const pagination = this.createPagination(slidesCounter)
         this.sliderElement.append(pagination)
         this.slideWidth = this.sliderElement.querySelector('.slider__slide').offsetWidth
-        console.log(this.slideWidth);
         
         mySlider.setListener()
     }
@@ -59,11 +62,18 @@ class Slider {
         this.sliderElement.addEventListener('click', (event) => {
             const isLeftArrow = event.target.closest('[data-arrow = "left"]');
             const isRightArrow = event.target.closest('[data-arrow = "right"]');
-            console.log(isLeftArrow);
-            console.log(isRightArrow);
+            if (isLeftArrow) {
+                this.counter += 1
+                console.log(this.counter*this.slideWidth);
+                
+                
+                this.truck.style.transform = `translateX(-${this.counter*this.slideWidth+this.gap*this.counter}px)`
+                console.log(this.truck.style);
+            }
         })
     }
 }
+
 
 const mySlider = new Slider()
 mySlider.getElement('#slider')
