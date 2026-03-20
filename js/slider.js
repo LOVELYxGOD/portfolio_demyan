@@ -5,6 +5,9 @@ class Slider {
         this.slideWidth = 0
         this.counter = 0
         this.gap = 10 
+        this.slidesCounter = 0
+        this.leftArrow = null
+        this.rightArrow = null
     }
 
     getElement(selector) {
@@ -26,13 +29,13 @@ class Slider {
         wrapperHiden.className = 'wrapperHiden'
         this.truck.innerHTML = contentsSlider
 
-        const leftArrow = this.createArrows('arrow left', 'left')
-        const rightArrow = this.createArrows('arrow right', 'right')
+        this.leftArrow = this.createArrows('arrow left', 'left')
+        this.rightArrow = this.createArrows('arrow right', 'right')
 
-        this.sliderElement.append(leftArrow, rightArrow)
+        this.sliderElement.append(this.leftArrow, this.rightArrow)
 
-        const slidesCounter = this.sliderElement.querySelectorAll('.slider__slide').length
-        const pagination = this.createPagination(slidesCounter)
+        this.slidesCounter = this.sliderElement.querySelectorAll('.slider__slide').length
+        const pagination = this.createPagination(this.slidesCounter)
         this.sliderElement.append(pagination)
         this.slideWidth = this.sliderElement.querySelector('.slider__slide').offsetWidth
         
@@ -62,14 +65,21 @@ class Slider {
         this.sliderElement.addEventListener('click', (event) => {
             const isLeftArrow = event.target.closest('[data-arrow = "left"]');
             const isRightArrow = event.target.closest('[data-arrow = "right"]');
-            if (isLeftArrow) {
-                this.counter += 1
-                console.log(this.counter*this.slideWidth);
+            if (isLeftArrow && this.counter > 0) {
+                this.counter -= 1
                 
-                
-                this.truck.style.transform = `translateX(-${this.counter*this.slideWidth+this.gap*this.counter}px)`
-                console.log(this.truck.style);
             }
+
+            if (isRightArrow && this.counter < this.slidesCounter - 1) {
+                
+                this.counter += 1                
+            }
+            else if(isRightArrow && this.counter == this.slidesCounter - 1) {
+                this.rightArrow.classList.add('arrow_blocked')
+            }
+
+            this.truck.style.transform = `translateX(-${this.counter*this.slideWidth+this.gap*this.counter}px)`
+            
         })
     }
 }
