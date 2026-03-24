@@ -29,7 +29,8 @@ class Slider {
         wrapperHiden.className = 'wrapperHiden'
         this.truck.innerHTML = contentsSlider
 
-        this.leftArrow = this.createArrows('arrow left', 'left')
+        this.leftArrow = this.createArrows('arrow left arrow_blocked', 'left')
+
         this.rightArrow = this.createArrows('arrow right', 'right')
 
         this.sliderElement.append(this.leftArrow, this.rightArrow)
@@ -67,17 +68,25 @@ class Slider {
             const isRightArrow = event.target.closest('[data-arrow = "right"]');
             if (isLeftArrow && this.counter > 0) {
                 this.counter -= 1
-                
+                if (this.rightArrow.classList.contains('arrow_blocked')) {
+                    this.rightArrow.classList.remove('arrow_blocked')
+                }
+                if(this.counter < 1) {
+                    this.leftArrow.classList.add('arrow_blocked')
+                }
             }
-
+            
+            
             if (isRightArrow && this.counter < this.slidesCounter - 1) {
-                
                 this.counter += 1                
+                if (this.leftArrow.classList.contains('arrow_blocked')) {
+                    this.leftArrow.classList.remove('arrow_blocked')
+                }
+                if(isRightArrow && this.counter == this.slidesCounter - 1) {
+                    this.rightArrow.classList.add('arrow_blocked')
+                }
             }
-            else if(isRightArrow && this.counter == this.slidesCounter - 1) {
-                this.rightArrow.classList.add('arrow_blocked')
-            }
-
+            
             this.truck.style.transform = `translateX(-${this.counter*this.slideWidth+this.gap*this.counter}px)`
             
         })
