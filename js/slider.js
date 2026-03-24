@@ -62,12 +62,20 @@ class Slider {
         return pagination
     }
 
-    setListener() {
-        this.sliderElement.addEventListener('click', (event) => {
-            const isLeftArrow = event.target.closest('[data-arrow = "left"]');
-            const isRightArrow = event.target.closest('[data-arrow = "right"]');
-            if (isLeftArrow && this.counter > 0) {
-                this.counter -= 1
+    decreaseCounter() {
+        this.counter -= 1
+    }
+
+    increaseCounter() {
+        this.counter += 1
+    }
+
+    arrowsHeandler(event) {
+        const isLeftArrow = event.target.closest('[data-arrow = "left"]');
+        const isRightArrow = event.target.closest('[data-arrow = "right"]');
+
+        if (isLeftArrow && this.counter > 0) {
+                this.decreaseCounter()
                 if (this.rightArrow.classList.contains('arrow_blocked')) {
                     this.rightArrow.classList.remove('arrow_blocked')
                 }
@@ -78,7 +86,7 @@ class Slider {
             
             
             if (isRightArrow && this.counter < this.slidesCounter - 1) {
-                this.counter += 1                
+                this.increaseCounter()              
                 if (this.leftArrow.classList.contains('arrow_blocked')) {
                     this.leftArrow.classList.remove('arrow_blocked')
                 }
@@ -86,9 +94,12 @@ class Slider {
                     this.rightArrow.classList.add('arrow_blocked')
                 }
             }
-            
+    }
+
+    setListener() {
+        this.sliderElement.addEventListener('click', (event) => {
+            this.arrowsHeandler(event)
             this.truck.style.transform = `translateX(-${this.counter*this.slideWidth+this.gap*this.counter}px)`
-            
         })
     }
 }
