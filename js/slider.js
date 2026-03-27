@@ -8,6 +8,7 @@ class Slider {
         this.slidesCounter = 0
         this.leftArrow = null
         this.rightArrow = null
+        this.listButtons = null
     }
 
     getElement(selector) {
@@ -36,7 +37,11 @@ class Slider {
         this.sliderElement.append(this.leftArrow, this.rightArrow)
 
         this.slidesCounter = this.sliderElement.querySelectorAll('.slider__slide').length
+        
         const pagination = this.createPagination(this.slidesCounter)
+        this.listButtons = pagination.querySelectorAll('[data-pagination]')
+        
+
         this.sliderElement.append(pagination)
         this.slideWidth = this.sliderElement.querySelector('.slider__slide').offsetWidth
         
@@ -58,8 +63,21 @@ class Slider {
         for (let index = 0; index < counter; index++) {
             const button = document.createElement('button')
             pagination.append(button)
-        }
+            button.className = 'pagination__button'
+            button.setAttribute('data-pagination', '')
+        } 
         return pagination
+    }
+
+    pagiationHeandler(event) {
+        const isPagination = event.target.closest('[data-pagination]')
+        console.log(this.listButtons);
+        
+        console.log(isPagination);
+        const isButton = Array.from(this.listButtons).indexOf(isPagination);
+        if (isButton != -1) {
+            this.counter = isButton
+        }
     }
 
     decreaseCounter() {
@@ -99,6 +117,7 @@ class Slider {
     setListener() {
         this.sliderElement.addEventListener('click', (event) => {
             this.arrowsHeandler(event)
+            this.pagiationHeandler(event)
             this.truck.style.transform = `translateX(-${this.counter*this.slideWidth+this.gap*this.counter}px)`
         })
     }
