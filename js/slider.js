@@ -1,5 +1,6 @@
 class Slider {
     constructor() {
+        this.wrapperHiden = null
         this.sliderElement = null
         this.truck = null
         this.slideWidth = 0
@@ -9,6 +10,8 @@ class Slider {
         this.leftArrow = null
         this.rightArrow = null
         this.listButtons = null
+        this.stratPoint = 0
+        this.endPoint = 0
     }
 
     getElement(selector) {
@@ -19,15 +22,15 @@ class Slider {
 
     builder() {
         const contentsSlider = this.sliderElement.innerHTML
-        const wrapperHiden = document.createElement('div')
+        this.wrapperHiden = document.createElement('div')
         this.truck = document.createElement('div')
         this.truck.className = 'truck'
         this.truck.style.gap = `${this.gap}px`
 
         this.sliderElement.innerHTML = ''
-        this.sliderElement.append(wrapperHiden)
-        wrapperHiden.append(this.truck)
-        wrapperHiden.className = 'wrapperHiden'
+        this.sliderElement.append(this.wrapperHiden)
+        this.wrapperHiden.append(this.truck)
+        this.wrapperHiden.className = 'wrapperHiden'
         this.truck.innerHTML = contentsSlider
 
         this.leftArrow = this.createArrows('arrow left arrow_blocked', 'left')
@@ -97,6 +100,32 @@ class Slider {
         this.counter += 1
     }
 
+    action(){
+        this.truck.style.transform = `translateX(-${this.counter*this.slideWidth+this.gap*this.counter}px)`
+    }
+
+    setStartPoint(event) {
+        
+        this.startPoint = event.clientX
+        console.log(this.startPoint);
+    }
+
+    setEndPoint(event) {
+        this.endPoint = event.clientX
+        console.log(this.endPoint);
+    }
+
+    heandlearMouseMove() {
+        const difference = this.startPoint - this.endPoint
+        if (difference > 0) {
+            this.increaseCounter()
+        }
+        else if (difference < 0) {
+            this.decreaseCounter()
+        }
+        this.action()
+    }
+
     arrowsHeandler(event) {
         const isLeftArrow = event.target.closest('[data-arrow = "left"]');
         const isRightArrow = event.target.closest('[data-arrow = "right"]');
@@ -124,11 +153,19 @@ class Slider {
     }
 
     setListener() {
+        this.wrapperHiden.addEventListener('mousedown', (event) => {
+            this.setStartPoint(event)
+        })
+        this.wrapperHiden.addEventListener('mouseup', (event) => {
+            this.setEndPoint(event)
+            this.heandlearMouseMove()
+        })
+
         this.sliderElement.addEventListener('click', (event) => {
             this.arrowsHeandler(event)
             this.pagiationHeandler(event)
-            this.setPaginationStyle()
-            this.truck.style.transform = `translateX(-${this.counter*this.slideWidth+this.gap*this.counter}px)`
+            // this.setPaginationStyle()
+            this.action()
         })
     }
 }
@@ -137,6 +174,7 @@ class Slider {
 const mySlider = new Slider()
 mySlider.getElement('#slider')
 mySlider.builder()
+
 
 
 
