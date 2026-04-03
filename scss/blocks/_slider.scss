@@ -54,6 +54,12 @@
     right: -60px;
 }
 
+.pagination__button--active {
+    background: red;
+    width: 30px;
+    height: 30px;
+}
+
 .arrow_blocked {
     opacity: 0.4;
     background-color: red;

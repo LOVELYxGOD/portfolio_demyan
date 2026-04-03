@@ -65,6 +65,9 @@ class Slider {
             pagination.append(button)
             button.className = 'pagination__button'
             button.setAttribute('data-pagination', '')
+            if (index == 0){
+                button.classList.add('pagination__button--active')
+            } 
         } 
         return pagination
     }
@@ -75,6 +78,15 @@ class Slider {
         if (isButton != -1) {
             this.counter = isButton
         }
+    }
+
+    setPaginationStyle() {
+        this.listButtons.forEach(button => {
+            button.classList.remove('pagination__button--active')          
+        });
+
+        this.listButtons[this.counter].classList.add('pagination__button--active')
+        
     }
 
     decreaseCounter() {
@@ -115,6 +127,7 @@ class Slider {
         this.sliderElement.addEventListener('click', (event) => {
             this.arrowsHeandler(event)
             this.pagiationHeandler(event)
+            this.setPaginationStyle()
             this.truck.style.transform = `translateX(-${this.counter*this.slideWidth+this.gap*this.counter}px)`
         })
     }
