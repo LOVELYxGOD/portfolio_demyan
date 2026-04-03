@@ -36,14 +36,14 @@ class Slider {
 
         this.sliderElement.append(this.leftArrow, this.rightArrow)
 
-        this.slidesCounter = this.sliderElement.querySelectorAll('.slider__slide').length
+        this.slidesCounter = this.sliderElement.querySelectorAll('.slide').length
         
         const pagination = this.createPagination(this.slidesCounter)
         this.listButtons = pagination.querySelectorAll('[data-pagination]')
         
 
         this.sliderElement.append(pagination)
-        this.slideWidth = this.sliderElement.querySelector('.slider__slide').offsetWidth
+        this.slideWidth = this.sliderElement.querySelector('.slide').offsetWidth
         
         mySlider.setListener()
     }
@@ -71,9 +71,6 @@ class Slider {
 
     pagiationHeandler(event) {
         const isPagination = event.target.closest('[data-pagination]')
-        console.log(this.listButtons);
-        
-        console.log(isPagination);
         const isButton = Array.from(this.listButtons).indexOf(isPagination);
         if (isButton != -1) {
             this.counter = isButton
