@@ -132,6 +132,8 @@ class Slider {
             this.pagiationHeandler(event)
             this.setPaginationStyle()
             this.truck.style.transform = `translateX(-${this.counter*this.slideWidth+this.gap*this.counter}px)`
+            console.log(event);
+            
         })
     }
 }
