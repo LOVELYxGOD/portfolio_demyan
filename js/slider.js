@@ -104,15 +104,11 @@ class Slider {
         this.truck.style.transform = `translateX(-${this.counter*this.slideWidth+this.gap*this.counter}px)`
     }
 
-    setStartPoint(event) {
-        
-        this.startPoint = event.clientX
-        console.log(this.startPoint);
+    setStartPoint(event) {      
+        this.startPoint = event.type.includes('mouse') ?  event.clientX : event.touches[0].clientX;        
     }
-
     setEndPoint(event) {
-        this.endPoint = event.clientX
-        console.log(this.endPoint);
+        this.endPoint = event.type.includes('mouse') ?  event.clientX : event.changedTouches[0].clientX;
     }
 
     heandlearMouseMove() {
@@ -160,6 +156,16 @@ class Slider {
             this.setEndPoint(event)
             this.heandlearMouseMove()
         })
+
+        this.wrapperHiden.addEventListener('touchstart', (event) => {
+            this.setStartPoint(event)
+        })
+        this.wrapperHiden.addEventListener('touchend', (event) => {
+            this.setEndPoint(event)
+            this.heandlearMouseMove()
+        })
+
+        
 
         this.sliderElement.addEventListener('click', (event) => {
             this.arrowsHeandler(event)
