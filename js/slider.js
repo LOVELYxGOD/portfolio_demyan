@@ -46,24 +46,24 @@ class Slider {
         this.sliderElement.append(pagination)
         this.slideWidth = this.sliderElement.querySelector('.slide').offsetWidth
         
-        this.updateArrowsStyle()
+        this.setArrowsStyle()
         
         mySlider.setListener()
     }
 
-createArrows(classname, arrowName) {
-    const arrow = document.createElement('button')
-    arrow.className = classname
-    arrow.setAttribute('data-arrow', arrowName)
+    createArrows(classname, arrowName) {
+        const arrow = document.createElement('button')
+        arrow.className = classname
+        arrow.setAttribute('data-arrow', arrowName)
 
-    arrow.innerHTML = `
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M9 6L15 12L9 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-`
+        arrow.innerHTML = `
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 6L15 12L9 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    `
 
-    return arrow
-}
+        return arrow
+    }
 
     createPagination(counter) {
         const pagination = document.createElement('div')
@@ -98,11 +98,15 @@ createArrows(classname, arrowName) {
     }
 
     decreaseCounter() {
-        this.counter -= 1
+        if (this.counter > 0) {
+            this.counter -= 1
+        }
     }
 
     increaseCounter() {
-        this.counter += 1
+        if (this.counter < this.slidesCounter - 1) {
+            this.counter += 1
+        }
     }
 
     action() {
@@ -126,11 +130,11 @@ createArrows(classname, arrowName) {
             this.decreaseCounter()
         }
         this.action()
-        this.updateArrowsStyle()
+        this.setArrowsStyle()
         this.setPaginationStyle()
     }
 
-    updateArrowsStyle() {
+    setArrowsStyle() {
         if (this.counter === 0) {
             this.leftArrow.classList.add('arrow_blocked')
         } else {
@@ -144,35 +148,21 @@ createArrows(classname, arrowName) {
         }
     }
 
-    moveLeft() {
-        if (this.counter > 0) {
-            this.counter = this.counter - 1
-            this.action()
-            this.updateArrowsStyle()
-            this.setPaginationStyle()
-        }
-    }
-
-    moveRight() {
-        if (this.counter < this.slidesCounter - 1) {
-            this.counter = this.counter + 1
-            this.action()
-            this.updateArrowsStyle()
-            this.setPaginationStyle()
-        }
-    }
 
     arrowsHeandler(event) {
         const isLeftArrow = event.target.closest('[data-arrow = "left"]');
         const isRightArrow = event.target.closest('[data-arrow = "right"]');
 
         if (isLeftArrow) {
-            this.moveLeft()
+            this.decreaseCounter()
         }
         
         if (isRightArrow) {
-            this.moveRight()
+            this.increaseCounter()
         }
+        this.setArrowsStyle()
+        this.setPaginationStyle()
+        this.action()
     }
 
     setListener() {
@@ -196,7 +186,7 @@ createArrows(classname, arrowName) {
             this.arrowsHeandler(event)
             this.pagiationHeandler(event)
             this.action()
-            this.updateArrowsStyle()
+            this.setArrowsStyle()
             this.setPaginationStyle()
         })
     }

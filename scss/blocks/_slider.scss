@@ -1,7 +1,7 @@
 .slider {
     position: relative;
-    max-width: 900px;
-    margin: 60px auto;
+    max-width: 700px;
+    margin: 0px auto;
 }
 
 .wrapperHiden {
@@ -152,4 +152,10 @@
     color: #444;
     line-height: 1.5;
     font-size: 14px;
+}
+
+@media(max-width: 850px) {
+    .arrow {
+        display: none;
+    }
 }
