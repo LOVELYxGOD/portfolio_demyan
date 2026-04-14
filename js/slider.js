@@ -34,7 +34,6 @@ class Slider {
         this.truck.innerHTML = contentsSlider
 
         this.leftArrow = this.createArrows('arrow left arrow_blocked', 'left')
-
         this.rightArrow = this.createArrows('arrow right', 'right')
 
         this.sliderElement.append(this.leftArrow, this.rightArrow)
@@ -44,9 +43,10 @@ class Slider {
         const pagination = this.createPagination(this.slidesCounter)
         this.listButtons = pagination.querySelectorAll('[data-pagination]')
         
-
         this.sliderElement.append(pagination)
         this.slideWidth = this.sliderElement.querySelector('.slide').offsetWidth
+        
+        this.setArrowsStyle()
         
         mySlider.setListener()
     }
@@ -55,10 +55,15 @@ class Slider {
         const arrow = document.createElement('button')
         arrow.className = classname
         arrow.setAttribute('data-arrow', arrowName)
+
+        arrow.innerHTML = `
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 6L15 12L9 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    `
+
         return arrow
     }
-
-
 
     createPagination(counter) {
         const pagination = document.createElement('div')
@@ -93,20 +98,25 @@ class Slider {
     }
 
     decreaseCounter() {
-        this.counter -= 1
+        if (this.counter > 0) {
+            this.counter -= 1
+        }
     }
 
     increaseCounter() {
-        this.counter += 1
+        if (this.counter < this.slidesCounter - 1) {
+            this.counter += 1
+        }
     }
 
-    action(){
+    action() {
         this.truck.style.transform = `translateX(-${this.counter*this.slideWidth+this.gap*this.counter}px)`
     }
 
     setStartPoint(event) {      
         this.startPoint = event.type.includes('mouse') ?  event.clientX : event.touches[0].clientX;        
     }
+    
     setEndPoint(event) {
         this.endPoint = event.type.includes('mouse') ?  event.clientX : event.changedTouches[0].clientX;
     }
@@ -120,32 +130,39 @@ class Slider {
             this.decreaseCounter()
         }
         this.action()
+        this.setArrowsStyle()
+        this.setPaginationStyle()
     }
+
+    setArrowsStyle() {
+        if (this.counter === 0) {
+            this.leftArrow.classList.add('arrow_blocked')
+        } else {
+            this.leftArrow.classList.remove('arrow_blocked')
+        }
+        
+        if (this.counter === this.slidesCounter - 1) {
+            this.rightArrow.classList.add('arrow_blocked')
+        } else {
+            this.rightArrow.classList.remove('arrow_blocked')
+        }
+    }
+
 
     arrowsHeandler(event) {
         const isLeftArrow = event.target.closest('[data-arrow = "left"]');
         const isRightArrow = event.target.closest('[data-arrow = "right"]');
 
-        if (isLeftArrow && this.counter > 0) {
-                this.decreaseCounter()
-                if (this.rightArrow.classList.contains('arrow_blocked')) {
-                    this.rightArrow.classList.remove('arrow_blocked')
-                }
-                if(this.counter < 1) {
-                    this.leftArrow.classList.add('arrow_blocked')
-                }
-            }
-            
-            
-            if (isRightArrow && this.counter < this.slidesCounter - 1) {
-                this.increaseCounter()              
-                if (this.leftArrow.classList.contains('arrow_blocked')) {
-                    this.leftArrow.classList.remove('arrow_blocked')
-                }
-                if(isRightArrow && this.counter == this.slidesCounter - 1) {
-                    this.rightArrow.classList.add('arrow_blocked')
-                }
-            }
+        if (isLeftArrow) {
+            this.decreaseCounter()
+        }
+        
+        if (isRightArrow) {
+            this.increaseCounter()
+        }
+        this.setArrowsStyle()
+        this.setPaginationStyle()
+        this.action()
     }
 
     setListener() {
@@ -165,25 +182,16 @@ class Slider {
             this.heandlearMouseMove()
         })
 
-        
-
         this.sliderElement.addEventListener('click', (event) => {
             this.arrowsHeandler(event)
             this.pagiationHeandler(event)
-
-            // this.setPaginationStyle()
             this.action()
-
+            this.setArrowsStyle()
+            this.setPaginationStyle()
         })
     }
 }
 
-
 const mySlider = new Slider()
 mySlider.getElement('#slider')
 mySlider.builder()
-
-
-
-
-// skillsContainer.addEventListener('click', (event) => toggleSkillCard(event));

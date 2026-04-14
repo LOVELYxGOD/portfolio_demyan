@@ -1,0 +1,10 @@
+.reviews  {
+    .common-title {
+        margin: 0 auto;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+}
