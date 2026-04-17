@@ -1,0 +1,54 @@
+.container {
+    
+}
+.footer__content {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+}
+.footer__brand {
+    max-width: 216px;
+}
+.logo {
+    &--footer {
+        max-width: 214px;
+    }
+    padding-bottom: 16px;
+}
+
+.footer__text {
+}
+.footer__contacts {
+
+    max-width: 450px;
+    font-size: 24px;
+}
+.footer__title {
+    font-weight: 700;
+    font-size: 32px;
+    padding-bottom: 16px;
+}
+.footer__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    justify-content: space-between;
+}
+.footer__item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+}
+.contact_link {
+    color: #b700ff;
+    text-decoration: none;
+    transition: .3s;
+}
+.contact_link:hover {
+    color: inherit;
+    text-shadow: 0px 0px 3px;
+}
