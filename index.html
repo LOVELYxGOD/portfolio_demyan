@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="./css/main.css">
     <script src="./js/mobile-menu.js" defer="defer"></script>
     <script src="./js/skills_card.js" defer="defer"></script>
-
-
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js" defer="defer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js" defer="defer"></script>
     <script src="./js/slider.js" defer="defer"></script>
+    <script src="./js/gsup-animation.js" defer="defer"></script>
 </head>
 <body>
     <header class="header" id="header">
@@ -52,13 +53,13 @@
             <div class="container">
                 <div class="welcome__content">
                     <div class="hero">
-                        <h1 class="hero__main-title">
+                        <h1 class="hero__main-title" id="mainTitle">
                             Demyan Kotyagin
                         </h1>
-                        <h2 class="hero__sub-title">
+                        <h2 class="hero__sub-title" id="seconderyTitle">
                             web creator
                         </h2>
-                        <p class="hero__discribe">
+                        <p class="hero__discribe" id="discriptionTitle">
                             I create web applications where every detail works towards a result
                         </p>
                     </div>
