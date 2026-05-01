@@ -128,15 +128,15 @@
 }
 
 .skill-card.active {
-    position: fixed;
-    transition: top .4s, left .4s;
+    position: fixed !important;
+    transition: top .4s, left .4s !important;
     z-index: 11;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    max-width: 650px;
-    max-height: 300px;
+    transform: translate(-50%, -50%) !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 100% !important;
+    max-width: 650px !important;
+    max-height: 300px !important;
     // ПОФИКСИТЬ ПЛАВНОСТЬ АНИМАЦИИ(НЕЙРОНКА)
     .skill-card__discription {
         transition: opacity .4s .8s;
@@ -150,12 +150,12 @@
         box-shadow: 0 0 8px #1f1e1b;
         border-radius: 8px;
         background: #1f1e1b80;
-        transform: rotateY(0deg);
+        transform: rotateY(0deg) !important;
         backdrop-filter: blur(5px);
     }
     .skill-card__front {
         transition:  transform .4s .4s;
-        transform: rotateY(180deg);        
+        transform: rotateY(180deg) !important;        
     }
 }
 .skill-card__close {
