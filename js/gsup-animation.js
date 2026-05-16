@@ -1,13 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger);
 
+    const tl = gsap.timeline();
+    tl.from("#mainTitle", {duration: 1, x: -800})
+    .from("#seconderyTitle", {duration: 1, x: -800})
+    .from("#discriptionTitle", {duration: 1, x: -800})
+    gsap.registerPlugin(ScrollTrigger)
+
+    gsap.from('.skill-card', {
+        scrollTrigger: {
+            trigger: "#titleSkill",
+            start: "top 80%",
+            end: "bottom 30%",
+            scrub: 2,
+            // markers: true
+        },
+            y: '100%',
+            opacity: 0,
+            stagger: 0.6,
+            duration: 1,
+    });
+
     const tlSkills = gsap.timeline({
         scrollTrigger: {
         trigger: "#skillSection",
         start: "top 95%", 
         end: "bottom 90%", 
         scrub: 1, 
-        markers: true
+        // markers: true
     },
     });
 
@@ -48,8 +68,8 @@ tlSkills
         scrollTrigger: {
             trigger: ".footer",
             start: "top 90%",
-            end: "top 70%",
-            markers: false,
+            end: "top 90%",
+            // markers: true,
             scrub: 1
         },
         y: 100,
@@ -92,7 +112,7 @@ const tlProjects = gsap.timeline({
     start: "top 95%", 
     end: "bottom 90%", 
     scrub: 1, 
-    markers: true
+    // markers: true
 },
 });
 
