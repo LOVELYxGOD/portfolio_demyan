@@ -1,5 +1,5 @@
-const skillsContainer = document.querySelector('#list-skill-card');
-const fade = skillsContainer.querySelector('#fade')
+const skillsContainer = document.querySelector('#skill-list');
+const fade = document.querySelector('#fadeblock')
 const body = document.body;
 
 function toggleSkillCard(event) {
@@ -7,7 +7,7 @@ function toggleSkillCard(event) {
     const isClose =  event.target.closest('[data-close]');
 
     if (isSkillCard) {
-        fade.classList.add('open')
+        fade.classList.add('active')
         isSkillCard.classList.add('active');
         body.classList.add('no-scroll');
         
@@ -16,7 +16,7 @@ function toggleSkillCard(event) {
         isClose.closest('[data-skill-card]').classList.remove('active')
         isClose.classList.remove('no-scroll')
         body.classList.remove('no-scroll');
-        fade.classList.remove('open')
+        fade.classList.remove('active')
     }
 }
 

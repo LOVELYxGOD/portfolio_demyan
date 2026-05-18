@@ -7,19 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .from("#discriptionTitle", {duration: 1, x: -800})
     gsap.registerPlugin(ScrollTrigger)
 
-    gsap.from('.skill-card', {
-        scrollTrigger: {
-            trigger: "#titleSkill",
-            start: "top 80%",
-            end: "bottom 30%",
-            scrub: 2,
-            // markers: true
-        },
-            y: '100%',
-            opacity: 0,
-            stagger: 0.6,
-            duration: 1,
-    });
+    
 
     const tlSkills = gsap.timeline({
         scrollTrigger: {
@@ -27,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         start: "top 95%", 
         end: "bottom 90%", 
         scrub: 1, 
-        // markers: true
+        markers: true
     },
     });
 
