@@ -10,11 +10,12 @@
     <script src="./js/skills_card.js" defer="defer"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js" defer="defer"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/SplitText.min.js" defer="defer"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js" defer="defer"></script>
-
+    
     <script src="./js/slider.js" defer="defer"></script>
     <script src="./js/gsup-animation.js" defer="defer"></script>
+    
 </head>
 <body>
     <header class="header" id="header">
@@ -78,7 +79,7 @@
                 </div>
             </div>
         </section>
-        <section class="about-me" id="about_meSection">
+        <section class="about-me" id="aboutmeSection">
             <div class="container">
                 <div class="about-me_content">
                     <div class="context-picture">
@@ -91,7 +92,7 @@
                 </div>
             </div>
         </section>
-        <!-- <section class="skills" id="skillSection">
+        <section class="skills" id="skillSection">
             <div class="container">
                 <div class="skills__content">
                     <h6 class="common-title" id="titleSkill">My Skills</h6>
@@ -176,113 +177,6 @@
                             </article>
 
                         </div>
-                </div>
-            </div>
-        </section> -->
-        <section class="skills" id="skills">
-            <div class="fade" id="fadeblock"></div>
-            <div class="container">
-                <div class="skills__content">
-                    <h3 class="common-tittle">
-                        Skills
-                    </h3>
-                    <ul class="skill-list" id="skill-list">
-                        <li class="skill-list__item">
-                            <article class="skill-card skill-card--html" data-skill-card>
-                                <div class="skill-card__front">
-                                    <svg class="skill-card__icon skill-card__icon--html">
-                                        <use href="./img/sprite.svg#HtmlIcon"></use>
-                                    </svg>
-                                    <p class="skill-card__tittle">HTML5</p>
-                                </div>
-                                <div class="skill-card__back">
-                                    <p class="skill-card__description">A craft clean, semantic markup that ensures your content ranks well in search engines and loads lightning-fast across all devices, giving you maximum visibility and user engagement.(the only language that allows you to make sites frontend)</p>
-                                    <button class="skill-card__close" data-close></button>
-                                </div>
-                            </article>
-                        </li>
-                        <li class="skill-list__item">
-                            <article class="skill-card skill-card--css" data-skill-card>
-                                <div class="skill-card__front">
-                                    <svg class="skill-card__icon skill-card__icon--scss">
-                                        <use href="/img/sprite.svg#CssIcon"></use>
-                                    </svg>
-                                    <p class="skill-card__tittle">CSS3</p>
-                                </div>
-                                <div class="skill-card__back">
-                                    <p class="skill-card__description">Create visually stunning, responsive designs that captivate your audience and convert visitors into customers through strategic visual hierarchy and seamless user experiences (btw this card styles were made with css)</p>
-                                    <button class="skill-card__close" data-close></button>
-                                </div>
-                            </article>
-                        </li>
-                        <li class="skill-list__item">
-                            <article class="skill-card skill-card--js" data-skill-card>
-                                <div class="skill-card__front">
-                                    <svg class="skill-card__icon skill-card__icon--js">
-                                        <use href="/img/sprite.svg#JsIcon"></use>
-                                    </svg>
-                                    <p class="skill-card__tittle">JavaScript</p>
-                                </div>
-                                <div class="skill-card__back">
-                                    <p class="skill-card__description">Build dynamic, interactive features that keep users engaged longer and boost conversion rates through smooth animations, real-time updates, and intuitive user interactions.(card interactive using js)</p>
-                                    <button class="skill-card__close" data-close></button>
-                                </div>
-                            </article>
-                        </li>
-                        <li class="skill-list__item">
-                            <article class="skill-card skill-card--git" data-skill-card>
-                                <div class="skill-card__front">
-                                    <svg class="skill-card__icon skill-card__icon--css">
-                                        <use href="./img/sprite.svg#ScssIcon"></use>
-                                    </svg>
-                                    <p class="skill-card__tittle">Git</p>
-                                </div>
-                                <div class="skill-card__back">
-                                    <p class="skill-card__description">Ensure your projects never lose progress and enable seamless collaboration with your team through professional version control, eliminating costly mistakes and accelerating development timelines.(git was used to make this site public)</p>
-                                    <button class="skill-card__close" data-close></button>
-                                </div>
-                            </article>
-                        </li>
-                        <li class="skill-list__item">
-                            <article class="skill-card skill-card--scss" data-skill-card>
-                                <div class="skill-card__front">
-                                    <svg class="skill-card__icon skill-card__icon--git">
-                                        <use href="./img/sprite.svg#GitIcon"></use>
-                                    </svg>
-                                    <p class="skill-card__tittle">SCSS</p>
-                                </div>
-                                <div class="skill-card__back">
-                                    <p class="skill-card__description">Streamline your styling workflow with organized, maintainable code that reduces development time by 50% while ensuring consistent branding across your entire digital presence.(like css but better)</p>
-                                    <button class="skill-card__close" data-close></button>
-                                </div>
-                            </article>
-                        </li>
-                        <!-- <li class="skill-list__item">
-                            <article class="skill-card skill-card--python" data-skill-card>
-                                <div class="skill-card__front">
-                                    <svg class="skill-card__icon" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path class="python-top" fill-rule="evenodd" clip-rule="evenodd" d="M52.0656 8C43.2772 8 36.153 14.8981 36.153 23.4074V34.0741H63.694V37.037H23.9126C15.1243 37.037 8 43.9352 8 52.4444V75.5556C8 84.0648 15.1243 90.9628 23.9126 90.9628H33.0929V77.926C33.0929 69.4168 40.2172 62.5184 49.0056 62.5184H78.3824C85.8188 62.5184 91.8468 56.6816 91.8468 49.4816V23.4074C91.8468 14.8981 84.7228 8 75.9344 8H52.0656ZM48.3936 26.963C51.4356 26.963 53.9016 24.5751 53.9016 21.6296C53.9016 18.6841 51.4356 16.2963 48.3936 16.2963C45.3512 16.2963 42.8852 18.6841 42.8852 21.6296C42.8852 24.5751 45.3512 26.963 48.3936 26.963Z"/>
-                                    <path class="python-bottom" fill-rule="evenodd" clip-rule="evenodd" d="M75.9336 120C84.722 120 91.8464 113.102 91.8464 104.593V93.926H64.3052V90.9632H104.087C112.875 90.9632 119.999 84.0648 119.999 75.5556V52.4444C119.999 43.9352 112.875 37.0371 104.087 37.0371H94.9064V50.074C94.9064 58.5836 87.782 65.4816 78.994 65.4816H49.6168C42.1804 65.4816 36.1523 71.3184 36.1523 78.5184V104.593C36.1523 113.102 43.2768 120 52.0648 120H75.9336ZM79.606 101.037C76.5636 101.037 74.0976 103.425 74.0976 106.37C74.0976 109.316 76.5636 111.704 79.606 111.704C82.648 111.704 85.114 109.316 85.114 106.37C85.114 103.425 82.648 101.037 79.606 101.037Z"/>
-                                    <defs>
-                                    <linearGradient id="paint0_linear_175_2" x1="49.9236" y1="8" x2="49.9236" y2="90.9628" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#327EBD"/>
-                                    <stop offset="1" stop-color="#1565A7"/>
-                                    </linearGradient>
-                                    <linearGradient id="paint1_linear_175_2" x1="78.076" y1="37.0371" x2="78.076" y2="120" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#FFDA4B"/>
-                                    <stop offset="1" stop-color="#F9C600"/>
-                                    </linearGradient>
-                                    </defs>
-                                    </svg>
-                                    <p class="skill-card__tittle">Python</p>
-                                </div>
-                                <div class="skill-card__back">
-                                    <p class="skill-card__description">Automate your repetitive tasks and build powerful data-driven solutions that save you hours of manual work while providing actionable insights to grow your business.(program beginners i advise you to learn python first)</p>
-                                    <button class="skill-card__close" data-skill-card-close></button>
-                                </div>
-                            </article>
-                        </li>  -->
-                    </ul>
                 </div>
             </div>
         </section>
