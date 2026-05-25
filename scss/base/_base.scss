@@ -27,11 +27,15 @@
     font-display: swap;
 }
 
+.html {
+    scroll-padding-top: 200px;
+}
 
 body {
     background-color: $color-grey-300;
     font-family: 'Inconsolata';
     color: $color-secondary;
+
 }
 
 .no-scroll {
