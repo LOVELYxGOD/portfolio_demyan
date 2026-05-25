@@ -24,6 +24,7 @@
     width: 72px; 
     height: 72px; 
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    aspect-ratio: 1;
     object-fit: cover;
 }
 
@@ -36,6 +37,14 @@
 }
 
 .context-picture__item--bottom {
+        background: #f0e3ca85;
+        z-index: 2;
+        backdrop-filter: blur(8px);
+        filter: blur(8px);
+        @include rotate(9s, ease-in, infinite) 
+}
+
+.context-picture__item--middle {
         background: #f0e3ca85;
         z-index: 2;
         backdrop-filter: blur(8px);
