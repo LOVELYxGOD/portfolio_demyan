@@ -382,7 +382,7 @@
     transition: background-color 0.2s, transform 0.2s 0s;
 
     &.active{
-        background-color: $context-color-transparent;
+        background-color: #b702ff7a;
         transform: scale(1);
     }
 }
