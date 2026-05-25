@@ -334,30 +334,84 @@
         transform: rotateY(180deg);
     }
 }
+
+
+.skill-card__icon {
+    transition: fill 0.3s ease, filter 0.3s ease;
+}
+
+.skill-card__tittle {
+    transition: text-shadow 0.3s ease; 
+}
+
 .skill-card--html:hover {
-        .skill-card__icon{
-            fill: $html-color;
-        }
+    .skill-card__icon {
+        fill: #fc490b;
+        filter: drop-shadow(0 0 8px #fc490b);
+    }
+    .skill-card__tittle {
+        text-shadow: 0 0 6px #fc490b;
+    }
 }
+
 .skill-card--css:hover {
-        .skill-card__icon{
-            fill: $css-color;
-        }
+    .skill-card__icon {
+        fill: #2965f1;
+        filter: drop-shadow(0 0 8px #2965f1);
+    } 
+    .skill-card__tittle {
+        text-shadow: 0 0 6px #2965f1;
+    }
 }
+
 .skill-card--js:hover {
-        .skill-card__icon{
-            fill: $js-color;
-        }
+    .skill-card__icon {
+        fill: #ffdf00;
+        filter: drop-shadow(0 0 8px #ffdf00);
+    }
+    .skill-card__tittle {
+        text-shadow: 0 0 6px #ffdf00;
+    }
 }
+
 .skill-card--git:hover {
-        .skill-card__icon{
-            fill: $git-color;
-        }
+    .skill-card__icon {
+        fill: #f25234;
+        filter: drop-shadow(0 0 8px #f25234);
+    }
+    .skill-card__tittle {
+        text-shadow: 0 0 6px #f25234;
+    }
 }
+
 .skill-card--scss:hover {
-        .skill-card__icon{
-            fill: $scss-color;
-        }
+    .skill-card__icon {
+        fill: #ca669b;
+        filter: drop-shadow(0 0 8px #ca669b);
+    }
+    .skill-card__tittle {
+        text-shadow: 0 0 6px #ca669b;
+    }
+}
+
+.skill-card--python .skill-card__icon .python-top,
+.skill-card--python .skill-card__icon .python-bottom {
+    transition: fill 0.3s ease, filter 0.3s ease;
+}
+
+
+.skill-card--python:hover .skill-card__icon .python-top {
+    fill: #1565A7;
+    filter: drop-shadow(0 0 8px #1565A7);
+}
+
+.skill-card--python:hover .skill-card__icon .python-bottom {
+    fill: #F9C600;
+    filter: drop-shadow(0 0 8px #F9C600);
+}
+
+.skill-card--python:hover .skill-card__tittle {
+    text-shadow: 0 0 6px #1565A7;
 }
 .skill-card--python:hover{
     .python-top {
