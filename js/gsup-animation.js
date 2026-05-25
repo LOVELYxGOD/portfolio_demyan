@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const tlSkills = gsap.timeline({
         scrollTrigger: {
-            trigger: "#skillSection",
+            trigger: "#skills",
             start: "top 95%", 
             end: "bottom 90%", 
             scrub: 1, 
