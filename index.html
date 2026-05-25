@@ -3,47 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    
+    <meta property="og:title" content="Demyan Kotyagin | Web Creator">
+    <meta property="og:description" content="I create web applications where every detail works towards a result. Web development, modern interfaces, responsive design.">
+    <meta property="og:image" content="./img/og-preview.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://lovelyxgod.github.io/portfolio_demyan/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Demyan Kotyagin Portfolio">
+    
+    <meta property="telegram:channel" content="@LOVELYxGOD">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Demyan Kotyagin | Web Creator">
+    <meta name="twitter:description" content="I create web applications where every detail works towards a result.">
+    <meta name="twitter:image" content="https://YOUR-DOMAIN.com/img/og-preview.jpg">
+    
+    <title>Demyan Kotyagin | Web Creator Portfolio</title>
     <link rel="shortcut icon" href="./favicon/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="./css/main.css">
     <script src="./js/mobile-menu.js" defer="defer"></script>
     <script src="./js/skills_card.js" defer="defer"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js" defer="defer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/SplitText.min.js" defer="defer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js" defer="defer"></script>
     
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js" defer="defer"></script>
+
     <script src="./js/slider.js" defer="defer"></script>
     <script src="./js/gsup-animation.js" defer="defer"></script>
-    
 </head>
 <body>
     <header class="header" id="header">
         <div class="container">
             <div class="header__content">
-                <img src="./img/logo.svg" alt="" class="logo">
+                <img src="./img/logo.svg" alt="Logo" class="logo">
                 <button class="burger" id="burger">
                     <span class="burger__center-line"></span>
                 </button>
                 <nav class="menu" id="menu">
                     <ul class="menu__list">
                         <li class="menu__item">
-                            <a href="#about_me" class="anchor-link" data-anchor>
+                            <a href="#about_meSection" class="anchor-link" data-anchor>
                             about me
                             </a>
                         </li>
                         <li class="menu__item">
-                            <a href="" class="anchor-link" data-anchor>
+                            <a href="#skills" class="anchor-link" data-anchor>
                             skills
                             </a>
                         </li>
                         <li class="menu__item">
-                            <a href="" class="anchor-link" data-anchor>
+                            <a href="#projectsSection" class="anchor-link" data-anchor>
                             projects
                             </a>
                         </li>
                         <li class="menu__item">
-                            <a href="" class="anchor-link" data-anchor>
+                            <a href="#footer" class="anchor-link" data-anchor>
                             contacts
                             </a>
                         </li>
@@ -73,13 +89,13 @@
                         <div class="avatar__item avatar__item--middle">
                         </div>
                         <div class="avatar__item avatar__item--top">
-                            <img src="./img/image.png" alt="" class="avatar__picture">
+                            <img src="./img/image.png" alt="Demyan Kotyagin avatar" class="avatar__picture">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="about-me" id="aboutmeSection">
+        <section class="about-me" id="about_meSection">
             <div class="container">
                 <div class="about-me_content">
                     <div class="context-picture">
@@ -92,91 +108,85 @@
                 </div>
             </div>
         </section>
-        <section class="skills" id="skillSection">
+        <section class="skills" id="skills">
+            <div class="fade" id="fadeblock"></div>
             <div class="container">
                 <div class="skills__content">
-                    <h6 class="common-title" id="titleSkill">My Skills</h6>
-                    <div class="list-skill-cards" id="list-skill-card">
-                        <div class="fade" id="fade"></div>
-                        
-                            <article class="skill-card" data-skill-card>
-                                
+                    <h3 class="common-tittle">
+                        Skills
+                    </h3>
+                    <ul class="skill-list" id="skill-list">
+                        <li class="skill-list__item">
+                            <article class="skill-card skill-card--html" data-skill-card>
                                 <div class="skill-card__front">
-                                    <div class="skill-card__wrapper-pic">
-                                        <svg class="skill-card__icon skill-card__icon--html">
-                                            <use href="./img/sprite.svg#HtmlIcon"></use>
-                                        </svg>
-                                    </div>
-                                    <div class="skill-card__title">HTML5</div>
+                                    <svg class="skill-card__icon skill-card__icon--html">
+                                        <use href="./img/sprite.svg#HtmlIcon"></use>
+                                    </svg>
+                                    <p class="skill-card__tittle">HTML5</p>
                                 </div>
                                 <div class="skill-card__back">
-                                    <span class="skill-card__discription">Чистая разметка, которая работает быстро и правильно отображается везде - от старого телефона до нового MacBook.</span>
+                                    <p class="skill-card__description">A craft clean, semantic markup that ensures your content ranks well in search engines and loads lightning-fast across all devices, giving you maximum visibility and user engagement.(the only language that allows you to make sites frontend)</p>
                                     <button class="skill-card__close" data-close></button>
                                 </div>
                             </article>
-                        
-
-                            <article class="skill-card" data-skill-card>
+                        </li>
+                        <li class="skill-list__item">
+                            <article class="skill-card skill-card--css" data-skill-card>
                                 <div class="skill-card__front">
-                                    <div class="skill-card__wrapper-pic">
-                                        <svg class="skill-card__icon skill-card__icon--scss">
-                                            <use href="/img/sprite.svg#CssIcon"></use>
-                                        </svg>
-                                    </div>
-                                    <div class="skill-card__title">CSS3</div>
+                                    <svg class="skill-card__icon skill-card__icon--scss">
+                                        <use href="/img/sprite.svg#CssIcon"></use>
+                                    </svg>
+                                    <p class="skill-card__tittle">CSS3</p>
                                 </div>
                                 <div class="skill-card__back">
-                                    <span class="skill-card__discription">Ваш дизайн будет выглядеть ровно так, как на макете, без сюрпризов на разных экранах.</span>
+                                    <p class="skill-card__description">Create visually stunning, responsive designs that captivate your audience and convert visitors into customers through strategic visual hierarchy and seamless user experiences (btw this card styles were made with css)</p>
                                     <button class="skill-card__close" data-close></button>
                                 </div>
                             </article>
-                        
-                            <article class="skill-card" data-skill-card>
+                        </li>
+                        <li class="skill-list__item">
+                            <article class="skill-card skill-card--js" data-skill-card>
                                 <div class="skill-card__front">
-                                    <div class="skill-card__wrapper-pic">
-                                        <svg class="skill-card__icon skill-card__icon--js">
-                                            <use href="/img/sprite.svg#JsIcon"></use>
-                                        </svg>
-                                    </div>
-                                    <div class="skill-card__title">JavaScript</div>
+                                    <svg class="skill-card__icon skill-card__icon--js">
+                                        <use href="/img/sprite.svg#JsIcon"></use>
+                                    </svg>
+                                    <p class="skill-card__tittle">JavaScript</p>
                                 </div>
                                 <div class="skill-card__back">
-                                    <span class="skill-card__discription">Делаю сайты живыми: выпадающие меню, слайдеры, формы - всё работает плавно и без зависаний.</span>
+                                    <p class="skill-card__description">Build dynamic, interactive features that keep users engaged longer and boost conversion rates through smooth animations, real-time updates, and intuitive user interactions.(card interactive using js)</p>
                                     <button class="skill-card__close" data-close></button>
                                 </div>
                             </article>
-                        
-                            <article class="skill-card" data-skill-card>
+                        </li>
+                        <li class="skill-list__item">
+                            <article class="skill-card skill-card--git" data-skill-card>
                                 <div class="skill-card__front">
-                                    <div class="skill-card__wrapper-pic skill-card__wrapper-pic--smaller">
-                                        <svg class="skill-card__icon skill-card__icon--css">
-                                            <use href="./img/sprite.svg#ScssIcon"></use>
-                                        </svg>
-                                    </div>
-                                    <div class="skill-card__title">SCSS</div>
+                                    <svg class="skill-card__icon skill-card__icon--css">
+                                        <use href="./img/sprite.svg#ScssIcon"></use>
+                                    </svg>
+                                    <p class="skill-card__tittle">Git</p>
                                 </div>
                                 <div class="skill-card__back">
-                                    <span class="skill-card__discription">Пишу стили так, чтобы потом легко что-то поменять или добавить - без переделывания всего с нуля.</span>
+                                    <p class="skill-card__description">Ensure your projects never lose progress and enable seamless collaboration with your team through professional version control, eliminating costly mistakes and accelerating development timelines.(git was used to make this site public)</p>
                                     <button class="skill-card__close" data-close></button>
                                 </div>
                             </article>
-
-                            <article class="skill-card" data-skill-card>
+                        </li>
+                        <li class="skill-list__item">
+                            <article class="skill-card skill-card--scss" data-skill-card>
                                 <div class="skill-card__front">
-                                    <div class="skill-card__wrapper-pic skill-card__wrapper-pic--smaller">
-                                        <svg class="skill-card__icon skill-card__icon--git">
-                                            <use href="./img/sprite.svg#GitIcon"></use>
-                                        </svg>
-                                    </div>
-                                    <div class="skill-card__title">GitHub</div>
+                                    <svg class="skill-card__icon skill-card__icon--git">
+                                        <use href="./img/sprite.svg#GitIcon"></use>
+                                    </svg>
+                                    <p class="skill-card__tittle">SCSS</p>
                                 </div>
                                 <div class="skill-card__back">
-                                    <span class="skill-card__discription">Весь код под контролем: ничего не потеряется, всегда можно посмотреть что и когда менялось.</span>
+                                    <p class="skill-card__description">Streamline your styling workflow with organized, maintainable code that reduces development time by 50% while ensuring consistent branding across your entire digital presence.(like css but better)</p>
                                     <button class="skill-card__close" data-close></button>
                                 </div>
                             </article>
-
-                        </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -187,7 +197,7 @@
                     <ul class="projects-list">
                         <li class="projects-list__item">
                             <article class="project-card">
-                                <img src="./img/card_portfolio.png" alt="" class="project-card__preview">
+                                <img src="./img/card_portfolio.png" alt="Minecraft project preview" class="project-card__preview">
                                 <div class="project-card__info">
                                     <div class="project-card__top">
                                         <h6 class="common-title">Minecraft</h6>
@@ -200,7 +210,7 @@
                         </li>
                         <li class="projects-list__item">
                             <article class="project-card">
-                                <img src="./img/card_portfolio.png" alt="" class="project-card__preview">
+                                <img src="./img/card_portfolio.png" alt="News Blog project preview" class="project-card__preview">
                                 <div class="project-card__info">
                                     <div class="project-card__top">
                                         <h6 class="common-title">News Blog</h6>
@@ -213,7 +223,7 @@
                         </li>
                         <li class="projects-list__item">
                             <article class="project-card">
-                                <img src="./img/card_portfolio.png" alt="" class="project-card__preview">
+                                <img src="./img/card_portfolio.png" alt="News Blog project preview" class="project-card__preview">
                                 <div class="project-card__info">
                                     <div class="project-card__top">
                                         <h6 class="common-title">News Blog</h6>
@@ -288,33 +298,34 @@
             </div>
         </section>
 
-        <footer class="footer">
+        <footer class="footer" id="footer">
             <div class="container">
                 <div class="footer__content">
                     <div class="footer__brand">
-                        <img src="./img/logo.svg" alt="" class="logo logo--footer">
+                        <img src="./img/logo.svg" alt="Logo" class="logo logo--footer">
                         <p class="footer__text">
                             If you liked my work and you need me, I'm ready to talk to you.
                         </p>
+                        <p class="footer__study-note">Это учебный проект</p>
                     </div>
                     <div class="footer__contacts">
                         <h6 class="common-title">Contacts</h6>
                         <ul class="footer__list">
                             <li class="footer__item">
-                                <img src="./img/contact_mail 1.svg" alt="">
-                                <a class="contact_link" href="">demiankot@list.ru</a>
+                                <img src="./img/contact_mail 1.svg" alt="Email icon">
+                                <a class="contact_link" href="mailto:demiankot@list.ru">demiankot@list.ru</a>
                             </li>
                             <li class="footer__item">
-                                <img src="./img/contact_github 1.svg" alt="">
-                                <a class="contact_link" href="">LOVELYxGOD</a>
+                                <img src="./img/contact_github 1.svg" alt="GitHub icon">
+                                <a class="contact_link" href="https://github.com/LOVELYxGOD" target="_blank">LOVELYxGOD</a>
                             </li>
                             <li class="footer__item">
-                                <img src="./img/TelegramIcon.svg" alt="">
-                                <a class="contact_link" href="">@LOVELYxGOD</a>
+                                <img src="./img/TelegramIcon.svg" alt="Telegram icon">
+                                <a class="contact_link" href="https://t.me/LOVELYxGOD" target="_blank">@LOVELYxGOD</a>
                             </li>
                             <li class="footer__item">
-                                <img src="./img/contact_vk 1.svg" alt="">
-                                <a class="contact_link" href="">LOVELYxGOD</a>
+                                <img src="./img/contact_vk 1.svg" alt="VK icon">
+                                <a class="contact_link" href="https://vk.com/LOVELYxGOD" target="_blank">LOVELYxGOD</a>
                             </li>
                         </ul>
                     </div>
