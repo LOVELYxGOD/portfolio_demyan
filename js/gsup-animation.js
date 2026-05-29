@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(SplitText);
 
     const tl = gsap.timeline();
-    tl.from("#mainTitle", {duration: 1, x: -800})
-    .from("#seconderyTitle", {duration: 1, x: -800})
-    .from("#discriptionTitle", {duration: 1, x: -800});
+    tl.from("#mainTitle", {duration: 1, x: -1000})
+    .from("#seconderyTitle", {duration: 1, x: -1000})
+    .from("#discriptionTitle", {duration: 1, x: -1000});
 
     const tlSkills = gsap.timeline({
         scrollTrigger: {
